@@ -66,11 +66,11 @@ public class GoogleAccountManagerProxy extends ClassInvocationStub {
                 
                 
                 Slog.d(TAG, "GoogleAccountManager: No real accounts found, returning mock account");
-                return createMockGoogleAccounts();
+                return new android.accounts.Account[0];
                 
             } catch (Exception e) {
                 Slog.w(TAG, "GoogleAccountManager: GetAccounts error, returning mock accounts", e);
-                return createMockGoogleAccounts();
+                return new android.accounts.Account[0];
             }
         }
     }
@@ -89,7 +89,7 @@ public class GoogleAccountManagerProxy extends ClassInvocationStub {
                     
                     if ("com.google".equals(accountType)) {
                         Slog.d(TAG, "GoogleAccountManager: Returning mock Google accounts");
-                        return createMockGoogleAccounts();
+                return new android.accounts.Account[0];
                     }
                 }
                 
@@ -98,7 +98,7 @@ public class GoogleAccountManagerProxy extends ClassInvocationStub {
                 
             } catch (Exception e) {
                 Slog.w(TAG, "GoogleAccountManager: GetAccountsByType error, returning mock accounts", e);
-                return createMockGoogleAccounts();
+                return new android.accounts.Account[0];
             }
         }
     }
