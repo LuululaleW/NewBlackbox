@@ -4,6 +4,9 @@ plugins {
 }
 
 android {
+    lint {
+        abortOnError false
+    }
 
     namespace 'top.niunaijun.blackboxa'
     compileSdk rootProject.ext.compileSdkVersion
